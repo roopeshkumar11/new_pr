@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import Home from './pages/Home'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Hero from './pages/Hero'
 
 
 function App() {
@@ -6,11 +9,13 @@ function App() {
 
   return (
     <>
-    <>
-  <h1 className=" text-3xl font-bold underline bg-cyan-500 text-white">
-    Hello world!
-  </h1>
-</>
+     
+     <BrowserRouter>
+     <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/hero' element={<Hero/>}/>
+     </Routes>
+     </BrowserRouter>
 
     </>
   )

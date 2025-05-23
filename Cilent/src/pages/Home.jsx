@@ -6,7 +6,7 @@ function Home() {
     <div className="bg-black min-h-screen flex flex-col justify-center items-center text-green-400 px-4 py-10 sm:py-16">
       {/* Image */}
       <img
-        src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80"
+        src="/images.jpeg"
         alt="Turbon Collection"
         className="w-4/5 sm:w-2/3 md:w-1/2 lg:w-[35%] rounded-xl object-cover mb-8 shadow-2xl transition-transform duration-500 hover:scale-105"
       />

@@ -21,7 +21,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-black text-white px-4 py-3 shadow-lg">
+    <nav className="bg-gray-900 text-white px-4 py-3 shadow-lg">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-green-400">

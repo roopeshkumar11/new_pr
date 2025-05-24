@@ -1,6 +1,8 @@
-import React from 'react';
 
-function Card({ image, title, description, buttonText = "View", onClick }) {
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function Card({ image, title, description, buttonText = "View", onClick ,link}) {
   return (
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 max-w-sm w-full">
       <img
@@ -21,11 +23,11 @@ function Card({ image, title, description, buttonText = "View", onClick }) {
             {buttonText}
           </button>
 
-          <button
+          <Link  to={link}
             className="text-green-600 hover:underline text-sm font-medium"
           >
             View More →
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -7,56 +7,64 @@ const products = [
     title: "Rajasthani Leheriya Safa",
     description: "Traditional Rajasthani turban with vibrant Leheriya pattern.",
      image: "/tb1.jpg",
-    price: "$35.00"
+    price: "$35.00",
+    link: "/product/1"
   },
   {
     id: 2,
     title: "Groom's Velvet Wedding Turban",
     description: "Luxurious velvet turban with gold kalgi for royal weddings.",
     image: "/tb2.jpg",
-    price: "$59.99"
+    price: "$59.99",
+     link: "/product/2"
   },
   {
     id: 3,
     title: "Maharashtrian Pheta",
     description: "Puneri Pheta in saffron, worn during weddings and religious events.",
     image: "/tb5m.jpg",
-    price: "$24.99"
+    price: "$24.99",
+     link: "/product/1"
   },
   {
     id: 4,
     title: "Punjabi Shahi Pag",
     description: "Tall and regal turban, often with kalgi, worn by Sikh grooms.",
     image: "/tb6p.jpg",
-    price: "$44.99"
+    price: "$44.99",
+     link: "/punjabi/p"
   },
   {
     id: 5,
     title: "Bandhani Safa",
     description: "Colorful tie-dye style from Gujarat, popular in weddings.",
     image: "/tb2.jpg",
-    price: "$39.99"
+    price: "$39.99",
+     link: "/product/1"
   },
   {
     id: 6,
     title: "Pearl Sehra Turban",
     description: "Cream silk turban with hanging pearl sehra for North Indian grooms.",
     image: "/tb3.jpg",
-    price: "$69.99"
+    price: "$69.99",
+     link: "/product/1"
   },
   {
     id: 7,
     title: "Floral Wedding Turban",
     description: "Lightweight turban with floral print for beach or garden weddings.",
     image: "/tb4.jpg",
-    price: "$49.99"
+    price: "$49.99",
+     link: "/product/1"
   },
   {
     id: 8,
     title: "Jaipuri Royal Pagdi",
     description: "Cylindrical Jaipuri turban worn during royal functions.",
      image: "/tb5m.jpg",
-    price: "$45.99"
+    price: "$45.99",
+     link: "/product/1"
   },
   {
     id: 9,
@@ -91,7 +99,7 @@ const products = [
 
 function ProductList() {
   return (
-    <div className="bg-black min-h-screen p-6">
+    <div className="bg-gray-900 min-h-screen p-6">
       <h1 className="text-4xl text-green-400 text-center font-bold mb-10">Turbon Collection</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
         {products.map(product => (
@@ -102,6 +110,7 @@ function ProductList() {
             description={product.description}
             buttonText={`Buy for ${product.price}`}
             onClick={() => alert(`You selected ${product.title}`)}
+            link={product.link}
           />
         ))}
       </div>

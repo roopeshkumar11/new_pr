@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <div className="bg-black min-h-screen flex flex-col justify-center items-center text-green-400 px-4 py-10 sm:py-16">
+    <div className="bg-gray-900 min-h-screen flex flex-col justify-center items-center text-green-400 px-4 py-10 sm:py-16">
       {/* Image */}
       <img
         src="/images.jpeg"

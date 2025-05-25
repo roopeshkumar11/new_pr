@@ -5,7 +5,10 @@ import Hero from './pages/Hero'
 import DetailTurbon from './pages/DetailTurbon'
 import Punjabi from './pages/Allturbondetail/Punjabi'
 import Rajsathani from './pages/Allturbondetail/Rajsathani'
-import { View } from 'lucide-react'
+import View from './pages/ViewProduct/View'
+import Sign from './pages/Account/Sign'
+import Login from './pages/Account/Login'
+
 
 
 function App() {
@@ -30,7 +33,11 @@ function App() {
 
                 {/* view product router */}
 
-                <Route path="/product/:id" element={<View/>}/>
+                <Route path="/product/p/:id" element={<View/>}/>
+
+
+                <Route path='/signin' element={<Sign/>}/>
+                <Route path='/login' element={<Login/>}/>
      </Routes>
      </BrowserRouter>
 

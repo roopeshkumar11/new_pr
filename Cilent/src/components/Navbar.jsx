@@ -51,12 +51,12 @@ function Navbar() {
           </Link>
 
           {/* Login / Logout Button */}
-          <button
-            onClick={handleLoginLogout}
+          <Link  to={"/signin"}
+           
             className="bg-green-400 text-black px-4 py-1 rounded hover:bg-green-300"
-          >
-            {loggedIn ? 'Logout' : 'Login'}
-          </button>
+          > Login
+           
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}

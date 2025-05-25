@@ -1,5 +1,5 @@
 import React from 'react';
-import Card  from "../../components/Card"
+import Card from "../../components/Card"
 
 const rajasthaniProducts = [
   {
@@ -75,7 +75,7 @@ function Rajsathani() {
             buttonText={`Buy for ${product.price}`}
             onClick={() => alert(`You selected ${product.title}`)}
             // link={product.link}
-            link={`/product/${product.id}`}
+            link={`/product/p/${product.id}`}
           />
         ))}
       </div>

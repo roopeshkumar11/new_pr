@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -13,38 +14,46 @@ function Sign() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-    
-//     try {
-//       const response = await fetch('http://localhost:5000/api/signin', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(formData)
-//       });
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-//       const data = await response.json();
+  try {
+    const response = await axios.post(
+      'http://localhost:8080/api/user/userregister',
+      formData,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
 
-//       if (response.ok) {
-//         alert("Login Successful!");
-//         console.log(data); // Or redirect or store token
-//       } else {
-//         alert(data.message || "Login failed");
-//       }
-//     } catch (error) {
-//       console.error("Error:", error);
-//       alert("Something went wrong");
-//     }
-//   };
+    if (response.status === 201) {
+      alert("Registration Successful!");
+      console.log(response.data)
+    } else {
+      alert(response.data.message || "Registration failed");
+    }
+
+  } catch (error) {
+    console.error("Error:", error);
+
+    // Handle specific error responses
+    if (error.response && error.response.data && error.response.data.error) {
+      alert(error.response.data.error);
+    } else {
+      alert("Something went wrong");
+    }
+  }
+};
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Sign In</h2>
 
-        <form  className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="block mb-1 text-gray-700 font-medium">Username</label>
             <input

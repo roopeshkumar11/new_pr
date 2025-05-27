@@ -48,10 +48,30 @@ export const UserRegiter = async (req, res) => {
 };
 
 
-export const Printdata=async()=>{
-  const ans=await User.find();
-  console.log(ans);
-}
+// export const Printdata=async()=>{
+//   const ans=await User.find();
+
+//   console.log(ans);
+//   return res.json({ans:{
+
+//   }})
+// }
+
+
+
+export const Printdata = async (req, res) => {
+  try {
+    const ans = await User.find();  
+             
+    
+ 
+    return res.json({ ans });     
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Server error while fetching users" });
+  }
+};
+
 
 
 export const loginUser=async(req,res)=>{

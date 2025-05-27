@@ -27,7 +27,7 @@ export const UserRegiter = async (req, res) => {
 
  
     await newUser.save();
-    return res.json({ message: "User registered", data: { username, phone } });
+    return res.status(201).json({ message: "User registered", data: { username, phone } });
     
   } catch (error) {
 
@@ -44,3 +44,28 @@ export const Printdata=async()=>{
 }
 
 
+export const loginUser=async(req,res)=>{
+
+  try {
+    const{phone,password}=req.body;
+   const  existingUser= await User.findOne({phone});
+
+   if(!existingUser){
+    return res.status(409).json({ error: "Account Not exists with this phone number" });
+   }
+    const isMatch = await bcrypt.compare(password, existingUser.password);
+    if (!isMatch) {
+      return res.status(400).json({ message: "Invalid email or password" });
+    }
+
+res.json({ message: "Login successful"});
+
+  } catch (error) {
+    console.log("Server" ,error)
+    return res.status(500).json({ error: "Login failed due to server error" });
+
+    
+  }
+
+ 
+}

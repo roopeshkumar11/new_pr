@@ -8,6 +8,7 @@ import Rajsathani from './pages/Allturbondetail/Rajsathani'
 import View from './pages/ViewProduct/View'
 import Sign from './pages/Account/Sign'
 import Login from './pages/Account/Login'
+import UserList from './pages/UserList'
 
 
 
@@ -20,6 +21,7 @@ function App() {
      <BrowserRouter>
      <Routes>
       <Route path='/' element={<Home/>}/>
+       <Route path='/userlist' element={<UserList/>}/>
       <Route path='/hero' element={<Hero/>}/>
 
          {/* //product detail */}

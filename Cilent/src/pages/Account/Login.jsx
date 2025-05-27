@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
 function Login() {
-  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
-    username: '',
+    phone: '',
     password: ''
   });
 
@@ -14,23 +14,44 @@ function Login() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Send data to backend here
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
+  try {
+    const response = await axios.post(
+      "http://localhost:8080/api/user/userlogin",
+      formData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    
+    if (response.status === 200) {
 
-    try {
+      const { token, user } = response.data;
+      console.log(token)
 
-      const response=axios.post({})
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(user));
+      alert("Login Successfully");
       
-    } catch (error) {
-      
+    } else {
+      alert("Login failed");
     }
-    console.log("Login Data:", formData);
 
-    // Navigate after login (dummy)
-    navigate('/dashboard'); // Change route as needed
-  };
+  } catch (error) {
+    console.error("Login Failed:", error);
+
+    if (error.response && error.response.data && error.response.data.error) {
+      alert(error.response.data.error);
+    } else {
+      alert("Server error occurred");
+    }
+  }
+};
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4  ">
@@ -39,9 +60,9 @@ function Login() {
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
-          type="text"
-          name="username"
-          placeholder="Username"
+          type="number"
+          name="phone"
+          placeholder="phone"
           onChange={handleChange}
           className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
         />

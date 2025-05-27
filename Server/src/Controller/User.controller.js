@@ -2,7 +2,7 @@
 
 import { User } from "../Models/User.model.js";
 import bcrypt from "bcryptjs";
-
+import jwt from "jsonwebtoken"
 
 export const UserRegiter = async (req, res) => {
   
@@ -27,7 +27,17 @@ export const UserRegiter = async (req, res) => {
 
  
     await newUser.save();
-    return res.status(201).json({ message: "User registered", data: { username, phone } });
+
+  const token=jwt.sign(
+    {userId:newUser._id,phone:newUser.phone},
+    process.env.JWT_SECRET,
+    {expiresIn:"1h"}
+  )
+    return res.status(201).json({ message: "User registered", token,user: {
+        id: newUser._id,
+        username: newUser.username,
+        phone: newUser.phone
+      } });
     
   } catch (error) {
 
@@ -48,6 +58,7 @@ export const loginUser=async(req,res)=>{
 
   try {
     const{phone,password}=req.body;
+    
    const  existingUser= await User.findOne({phone});
 
    if(!existingUser){
@@ -57,8 +68,12 @@ export const loginUser=async(req,res)=>{
     if (!isMatch) {
       return res.status(400).json({ message: "Invalid email or password" });
     }
-
-res.json({ message: "Login successful"});
+ const token=jwt.sign(
+    {userId:existingUser._id,phone:existingUser.phone},
+    process.env.JWT_SECRET,
+    {expiresIn:"1h"}
+  )
+res.status(200).json({ message: "Login successful",token,user:{id:existingUser._id,phone:existingUser.phone}});
 
   } catch (error) {
     console.log("Server" ,error)

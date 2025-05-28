@@ -9,7 +9,7 @@ function View() {
     console.log(id);
   return (
     <>
-   <Navbar/>
+
      <div className="bg-gray-900 text-white min-h-screen flex items-center justify-center">
     
 
@@ -17,7 +17,7 @@ function View() {
       
      
     </div>
-    <Footer/>
+   
     </>
   )
 }

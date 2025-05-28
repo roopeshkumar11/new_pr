@@ -44,7 +44,7 @@ function Login() {
         
 
         alert("Login Successfully");
-login(token)
+       login(token)
        
         navigate('/hero'); 
       } else {

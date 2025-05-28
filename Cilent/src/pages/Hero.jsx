@@ -10,11 +10,11 @@ function Hero(){
 
     return(
         <>
-<Navbar/>
+
 
 <TurbanSlider/>
 <ProductList/>
-<Footer/>
+
 
 
        

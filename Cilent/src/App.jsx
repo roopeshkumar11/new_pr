@@ -10,6 +10,8 @@ import Sign from './pages/Account/Sign'
 import Login from './pages/Account/Login'
 import UserList from './pages/UserList'
 import PrivateRoute from './Routes/PrivateRoute'
+import Layout from './components/Layout'
+import AboutCompany from './pages/AboutCompany'
 
 
 
@@ -21,7 +23,9 @@ function App() {
      
      <BrowserRouter>
      <Routes>
-      <Route path='/' element={<Home/>}/>
+          <Route index element={<Home/>}/>
+      <Route path='/' element={<Layout/>}>
+  
        <Route path='/userlist' element={<UserList/>}/>
       <Route path='/hero' element={<Hero/>}/>
 
@@ -32,6 +36,7 @@ function App() {
             <Route path="/punjabi/p" element={<Punjabi/>}/>
               <Route path="/product/5" element={<DetailTurbon/>}/>
                 <Route path="/product/6" element={<DetailTurbon/>}/>
+                <Route path='/about' element={<AboutCompany/>}/>
 
 
                 {/* view product router */}
@@ -40,7 +45,7 @@ function App() {
 
 
                 <Route path='/signin' element={<Sign/>}/>
-                <Route path='/login' element={<Login/>}/>
+                <Route path='/login' element={<Login/>}/> </Route>
      </Routes>
      </BrowserRouter>
 

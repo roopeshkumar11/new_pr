@@ -6,6 +6,8 @@ import ProductList from "./ProductList"
 import TurbanSlider from "./TurbanSlider"
 
 function Hero(){
+    
+
     return(
         <>
 <Navbar/>

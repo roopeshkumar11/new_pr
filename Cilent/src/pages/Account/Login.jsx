@@ -97,6 +97,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../../ContextApi/Authcontext';
 
 function Login() {
   const navigate = useNavigate();
@@ -105,6 +106,8 @@ function Login() {
     password: ''
   });
 
+
+  const {token}=useAuth()
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -126,9 +129,9 @@ function Login() {
 
       if (response.status === 200) {
         const { token, user } = response.data;
-        console.log("Token:", token);
+      
 
-        // Save token and user info in localStorage
+        
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(user));
 
@@ -138,7 +141,7 @@ function Login() {
         alert("Login Successfully");
 
         // Redirect to dashboard or protected page
-        navigate('/dashboard'); 
+        navigate('/hero'); 
       } else {
         alert("Login failed");
       }
@@ -177,12 +180,13 @@ function Login() {
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
-          <button
-            type="submit"
-            className="w-full bg-green-500 text-white py-2 rounded-lg font-semibold hover:bg-green-600 transition"
-          >
-            Login
-          </button>
+        <button
+  type="submit"
+  className="w-full bg-green-500 text-white py-2 rounded-lg font-semibold hover:bg-green-600 transition"
+>
+  Login
+</button>
+
         </form>
 
         <p className="mt-4 text-center text-sm text-gray-600">

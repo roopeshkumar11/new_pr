@@ -9,6 +9,7 @@ import View from './pages/ViewProduct/View'
 import Sign from './pages/Account/Sign'
 import Login from './pages/Account/Login'
 import UserList from './pages/UserList'
+import PrivateRoute from './Routes/PrivateRoute'
 
 
 
@@ -25,7 +26,7 @@ function App() {
       <Route path='/hero' element={<Hero/>}/>
 
          {/* //product detail */}
-      <Route path="/product/1" element={<Rajsathani/>}/>
+      <Route path="/product/1" element={<PrivateRoute><Rajsathani/></PrivateRoute>}/>
         <Route path="/product/2" element={<Punjabi/>}/>
           <Route path="/product/3" element={<DetailTurbon/>}/>
             <Route path="/punjabi/p" element={<Punjabi/>}/>

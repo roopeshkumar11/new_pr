@@ -23,10 +23,15 @@ function UserList() {
 
   const userdelete=async(id)=>{
     try {
-      const reponse=axios.delete(`http://localhost:8080/api/user/delete/${id}`);
-      alert("User deleted successfully")
+      const reponse=axios.delete(`http://localhost:8080/api/admin/delete/${id}`)
+       .then(response => {
+        alert("User deleted successfully",response.data.message)
+       
+      })
+       UserList()
+     
     } catch (error) {
-      alert("Error deleting user:")
+      alert("Error deleting user:",response.message)
 
       
     }
@@ -61,7 +66,7 @@ function UserList() {
                 <td className=" border border-gray-300 px-4 py-2">{user.phone}</td>
                 <td className="border border-gray-300 px-4 py-2">{user.username}</td>
                 <td className="border border-gray-300 px-4 py-2">{user.password}</td>
-                <td><button    className=" bg-blue border border-gray-300 px-4 py-2 ">Delete  user</button></td>
+                <td><button  onClick={()=>userdelete(user._id)}  className=" bg-blue border border-gray-300 px-4 py-2 ">Delete  user</button></td>
               </tr>
             ))
           )}

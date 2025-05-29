@@ -7,6 +7,7 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom'
 import UserList from './pages/UserList'
 import Addproduct from './pages/Addproduct'
 import Deleteuser from './pages/Deleteuser'
+import ProductChart from './pages/ProductChart'
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   <Route path="" element={<DashboardLayout/>}>
   <Route path='/userlist' element={<UserList/>}/>
   <Route path='/addproduct' element={<Addproduct/>}/>
-  {/* <Route path='userlist/deleteuser/:id' element={<Deleteuser/>}/> */}
+  <Route path='/dashboard' element={<ProductChart/>}/>
 
   </Route>
 </Routes>

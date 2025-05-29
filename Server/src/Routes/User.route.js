@@ -6,6 +6,6 @@ import authMiddleware from "../Middleware/Auth.middleware.js";
 const RegisterRouter=express.Router();
 
 RegisterRouter.post("/userregister",UserRegiter);
-RegisterRouter.get("/get",authMiddleware,Printdata);
+RegisterRouter.get("/get",Printdata);
 RegisterRouter.post("/userlogin",loginUser);
 export default RegisterRouter;

@@ -4,6 +4,7 @@ import express from "express";
 
 import RegisterRouter from "./Routes/User.route.js";
 import{ admindeleteuser ,adminAddProduct } from "./Routes/Admin/admin.js";
+import getproduct from "./Routes/Getallproduct.route.js";
 
 const app=express();
 
@@ -20,5 +21,8 @@ app.use("/api/user",RegisterRouter)
 
 app.use("/api/admin",admindeleteuser)
 app.use("/api/admin/add",adminAddProduct)
+
+
+app.use("/api/product",getproduct)
 
 export default app;

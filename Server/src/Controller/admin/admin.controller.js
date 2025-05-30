@@ -25,10 +25,7 @@ export const addproduct=async(req,res)=>{
    const {name,price,description}=req.body;
   const image=req.file;
 
-  console.log(name)
-    console.log(price)
-      console.log(description)
-        console.log(image)
+
   
   if(!image){
     res.status(404).json({message:"Image not find"})
@@ -45,7 +42,7 @@ export const addproduct=async(req,res)=>{
     image:image.path
   })
 
-  await data.save();
+  await newProduct.save();
      res.status(201).json({ message: 'Product added successfully', product: newProduct });
  } catch (error) {
   res.status(500).json({ message: 'Server error', error: error.message });

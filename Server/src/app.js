@@ -3,7 +3,7 @@ import cors from "cors"
 import express from "express";
 
 import RegisterRouter from "./Routes/User.route.js";
-import admindeleteuser from "./Routes/Admin/admin.js";
+import{ admindeleteuser ,adminAddProduct } from "./Routes/Admin/admin.js";
 
 const app=express();
 
@@ -19,5 +19,6 @@ app.use("/api/user",RegisterRouter)
 // admin
 
 app.use("/api/admin",admindeleteuser)
+app.use("/api/admin/add",adminAddProduct)
 
 export default app;

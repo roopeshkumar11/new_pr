@@ -8,10 +8,11 @@ import Rajsathani from './pages/Allturbondetail/Rajsathani'
 import View from './pages/ViewProduct/View'
 import Sign from './pages/Account/Sign'
 import Login from './pages/Account/Login'
-import UserList from './pages/UserList'
+// import UserList from './pages/UserList'
 import PrivateRoute from './Routes/PrivateRoute'
 import Layout from './components/Layout'
 import AboutCompany from './pages/AboutCompany'
+import CustomerDetails from './pages/CustomerDetails'
 
 
 
@@ -26,7 +27,7 @@ function App() {
           <Route index element={<Home/>}/>
       <Route path='/' element={<Layout/>}>
   
-       <Route path='/userlist' element={<UserList/>}/>
+       {/* <Route path='/userlist' element={<UserList/>}/> */}
       <Route path='/hero' element={<Hero/>}/>
 
          {/* //product detail */}
@@ -45,7 +46,9 @@ function App() {
 
 
                 <Route path='/signin' element={<Sign/>}/>
-                <Route path='/login' element={<Login/>}/> </Route>
+                <Route path='/login' element={<Login/>}/>
+                <Route path="/customerdetails" element={<CustomerDetails/>}/>
+                 </Route>
      </Routes>
      </BrowserRouter>
 

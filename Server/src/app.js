@@ -5,7 +5,8 @@ import express from "express";
 import RegisterRouter from "./Routes/User.route.js";
 import{ admindeleteuser ,adminAddProduct } from "./Routes/Admin/admin.js";
 import getproduct from "./Routes/Getallproduct.route.js";
-import additemcart from "./Routes/Cart.route.js";
+import { additemcart, getcartuser } from "./Routes/Cart.route.js";
+
 
 const app=express();
 
@@ -29,5 +30,6 @@ app.use("/api/product",getproduct)
 // add to cart
 
 app.use("/api/cart",additemcart)
+app.use("/api/cartitem",getcartuser)
 
 export default app;

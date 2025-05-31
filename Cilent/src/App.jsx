@@ -13,6 +13,7 @@ import PrivateRoute from './Routes/PrivateRoute'
 import Layout from './components/Layout'
 import AboutCompany from './pages/AboutCompany'
 import CustomerDetails from './pages/CustomerDetails'
+import Cart from './pages/Cart'
 
 
 
@@ -38,7 +39,7 @@ function App() {
               <Route path="/product/5" element={<DetailTurbon/>}/>
                 <Route path="/product/6" element={<DetailTurbon/>}/>
                 <Route path='/about' element={<AboutCompany/>}/>
-
+               <Route path="/cart" element={<Cart/>}/>
 
                 {/* view product router */}
 

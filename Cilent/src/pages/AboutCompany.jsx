@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaPhone, FaEnvelope } from 'react-icons/fa';
 
+
 function AboutCompany() {
+
   return (
     <div className="mx-auto  bg-white p-8 rounded-lg shadow-md mt-10 max-w-4xl">
       <h2 className="text-3xl font-bold mb-6 text-center text-green-700">About Our Company</h2>

@@ -33,6 +33,7 @@ function View() {
             title={singleproduct.title}
             description={singleproduct.description}
             price={singleproduct.price}
+            productId={singleproduct._id}
           />
         ) : (
           <p>Loading...</p>

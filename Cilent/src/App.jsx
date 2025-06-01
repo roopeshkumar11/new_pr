@@ -33,13 +33,13 @@ function App() {
 
          {/* //product detail */}
       <Route path="/product/1" element={<PrivateRoute><Rajsathani/></PrivateRoute>}/>
-        <Route path="/product/2" element={<Punjabi/>}/>
+        <Route path="/product/2" element={<PrivateRoute><Rajsathani/></PrivateRoute>}/>
           <Route path="/product/3" element={<DetailTurbon/>}/>
             <Route path="/punjabi/p" element={<Punjabi/>}/>
               <Route path="/product/5" element={<DetailTurbon/>}/>
                 <Route path="/product/6" element={<DetailTurbon/>}/>
                 <Route path='/about' element={<AboutCompany/>}/>
-               <Route path="/cart" element={<Cart/>}/>
+               <Route path="/cart" element={<PrivateRoute><Cart/></PrivateRoute>}/>
 
                 {/* view product router */}
 

@@ -52,6 +52,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../ContextApi/Authcontext';
+import { useNavigate } from 'react-router-dom';
 
 function Cart() {
   const [items, setItems] = useState([]);
@@ -78,6 +79,22 @@ function Cart() {
     getCartItems();
   }, [user]);
 
+  const navigate=useNavigate();
+
+  const handlerreomve=async(id)=>{
+    try {
+      const removeitem=await axios.delete(`http://localhost:8080/api/deletecart/removeitem/${id}`)
+      if(removeitem.data.message){
+        alert("Remove item from cart")
+        navigate("/hero")
+
+      }
+      
+    } catch (error) {
+      alert("item Not remove")
+      
+    }
+  }
   return (
     <div className="max-w-5xl mx-auto p-6">
       <h2 className="text-2xl font-bold mb-6 text-center text-green-700">🛒 Your Cart</h2>
@@ -103,6 +120,10 @@ function Cart() {
                   <strong>Quantity:</strong> {item.quantity}
                 </p>
               </div>
+              <button  onClick={()=>{handlerreomve(item._id)}}className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+  Remove
+</button>
+
             </div>
           ))}
         </div>

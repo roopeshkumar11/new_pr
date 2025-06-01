@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Card({ image, title, description, buttonText = "View", onClick ,link}) {
+function Card({ image, title, description, buttonText = "View" ,link}) {
   return (
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 max-w-sm w-full">
       <img
@@ -17,7 +17,7 @@ function Card({ image, title, description, buttonText = "View", onClick ,link}) 
         {/* Buttons aligned left and right */}
         <div className="flex justify-between items-center mt-4">
           <button
-            onClick={onClick}
+          
             className="bg-green-400 text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-500 transition"
           >
             {buttonText}

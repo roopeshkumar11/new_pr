@@ -144,7 +144,7 @@ function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
           <Link to="/" className="hover:text-green-400">Home</Link>
-          <Link to="/userlist" className="hover:text-green-400">Products</Link>
+          <Link to="/hero" className="hover:text-green-400">Products</Link>
           <Link to="/about" className="hover:text-green-400">About</Link>
 
           {/* Search Bar */}
@@ -193,7 +193,7 @@ function Navbar() {
       {menuOpen && (
         <div className="md:hidden mt-3 flex flex-col gap-3 px-2">
           <Link to="/" className="hover:text-green-400" onClick={toggleMenu}>Home</Link>
-          <Link to="/userlist" className="hover:text-green-400" onClick={toggleMenu}>Products</Link>
+          <Link to="/hero" className="hover:text-green-400" onClick={toggleMenu}>Products</Link>
           <Link to="/about" className="hover:text-green-400" onClick={toggleMenu}>About</Link>
 
           <form onSubmit={handleSearch}>

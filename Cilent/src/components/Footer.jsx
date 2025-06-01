@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+
+import { FaLinkedin } from 'react-icons/fa6';
 
 function Footer() {
   return (
@@ -20,8 +22,8 @@ function Footer() {
           <h3 className="text-xl font-semibold text-white mb-2">Quick Links</h3>
           <ul className="text-sm space-y-1">
             <li><Link to="/" className="hover:underline">Home</Link></li>
-            <li><Link to="/products" className="hover:underline">Products</Link></li>
-            <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+            <li><Link to="/hero" className="hover:underline">Products</Link></li>
+            {/* <li><Link to="/contact" className="hover:underline">Contact</Link></li> */}
             <li><Link to="/about" className="hover:underline">About</Link></li>
           </ul>
         </div>
@@ -30,9 +32,9 @@ function Footer() {
         <div>
           <h3 className="text-xl font-semibold text-white mb-2">Follow Us</h3>
           <div className="flex justify-center md:justify-start space-x-6 text-2xl mt-2">
-            <a href="#" className="hover:text-white" aria-label="Facebook"><FaFacebookF /></a>
-            <a href="#" className="hover:text-white" aria-label="Instagram"><FaInstagram /></a>
-            <a href="#" className="hover:text-white" aria-label="YouTube"><FaYoutube /></a>
+            <a href="https://www.linkedin.com/in/roopeshkumar11/" className="hover:text-white" aria-label="Facebook"><FaLinkedinIn/></a>
+            <a href="https://github.com/roopeshkumar11/" className="hover:text-white" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://www.linkedin.com/in/roopeshkumar11/" className="hover:text-white" aria-label="YouTube"><FaYoutube /></a>
           </div>
         </div>
       </div>

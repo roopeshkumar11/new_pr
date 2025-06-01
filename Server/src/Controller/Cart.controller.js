@@ -49,3 +49,21 @@ export const getusercart = async (req, res) => {
     });
   }
 };
+
+ export const  cartitemdelete=async(req,res)=>{
+  try {
+
+    const {id}=req.params;
+
+    const findcartitem=await Cart.findByIdAndDelete(id);
+
+    res.status(201).json({message:"item delete successfully",findcartitem:findcartitem})
+    
+  } catch (error) {
+     res.status(500).json({
+      message: "cart items not delete",
+      error: error.message,
+    });
+    
+  }
+ }

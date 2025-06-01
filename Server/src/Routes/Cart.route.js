@@ -1,5 +1,5 @@
 import express from "express"
-import { addtoCart, getusercart } from "../Controller/Cart.controller.js";
+import { addtoCart, cartitemdelete, getusercart } from "../Controller/Cart.controller.js";
 const additemcart=express.Router();
 
 additemcart.post("/addtocart",addtoCart);
@@ -9,4 +9,8 @@ additemcart.post("/addtocart",addtoCart);
 const getcartuser=express.Router();
 getcartuser.get("/usercart/:id",getusercart)
 
-export {additemcart,getcartuser};
+
+const cartitemdeleteRoute=express.Router();
+cartitemdeleteRoute.delete("/removeitem/:id",cartitemdelete)
+
+export {additemcart,getcartuser,cartitemdeleteRoute};

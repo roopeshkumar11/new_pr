@@ -8,7 +8,7 @@ function UserList() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/user/get')
+    axios.get('https://new-pr.onrender.com/api/user/get')
       .then(response => {
         setUsers(response.data.ans); // Make sure this is correct shape
         setLoading(false);
@@ -23,7 +23,7 @@ function UserList() {
 
   const userdelete=async(id)=>{
     try {
-      const reponse=axios.delete(`http://localhost:8080/api/admin/delete/${id}`)
+      const reponse=axios.delete(`https://new-pr.onrender.com/api/admin/delete/${id}`)
        .then(response => {
         alert("User deleted successfully",response.data.message)
        

@@ -25,7 +25,7 @@ function Addproduct() {
       formData.append('description', product.description);
       formData.append('image', image); 
 
-      const res = await axios.post('http://localhost:8080/api/admin/add/addproduct', formData, {
+      const res = await axios.post('https://new-pr.onrender.com/api/admin/add/addproduct', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

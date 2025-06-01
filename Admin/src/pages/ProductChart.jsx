@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import {
   LineChart, Line,
@@ -28,22 +26,28 @@ const barData = [
 
 export default function ProductChart() {
   return (
-    <div style={{
-      display: "flex",
-      justifyContent: "space-around",
-      padding: 20,
-      gap: 40,
-      background: "#f0f2f5",
-      minHeight: "450px"
-    }}>
-      {/* Line chart for Trading/Stock price */}
-      <div style={{
-        flex: 1,
-        background: "white",
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
         padding: 20,
-        borderRadius: 10,
-        boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
-      }}>
+        gap: 40,
+        background: "#f0f2f5",
+        minHeight: "450px",
+      }}
+    >
+      {/* Line chart */}
+      <div
+        style={{
+          flex: "1 1 400px",
+          minWidth: "300px",
+          background: "white",
+          padding: 20,
+          borderRadius: 10,
+          boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+        }}
+      >
         <h3 style={{ textAlign: "center", marginBottom: 20 }}>Stock Price Over Time</h3>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={lineData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
@@ -57,14 +61,17 @@ export default function ProductChart() {
         </ResponsiveContainer>
       </div>
 
-      {/* Bar chart for Product sales */}
-      <div style={{
-        flex: 1,
-        background: "white",
-        padding: 20,
-        borderRadius: 10,
-        boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
-      }}>
+      {/* Bar chart */}
+      <div
+        style={{
+          flex: "1 1 400px",
+          minWidth: "300px",
+          background: "white",
+          padding: 20,
+          borderRadius: 10,
+          boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+        }}
+      >
         <h3 style={{ textAlign: "center", marginBottom: 20 }}>Product Sales</h3>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={barData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>

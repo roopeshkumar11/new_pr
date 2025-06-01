@@ -1,18 +1,3 @@
-// import { Outlet } from "react-router-dom";
-// import Sidebar from "../component/Sidebar";
-
-// const DashboardLayout = () => {
-//   return (
-//     <div className="flex min-h-screen">
-//       <Sidebar />
-//       <main className="flex-1 p-6 bg-gray-100">
-//         <Outlet />
-//       </main>
-//     </div>
-//   );
-// };
-
-// export default DashboardLayout;
 
 import { Outlet } from "react-router-dom";
 import Sidebar from "../component/Sidebar";
@@ -25,25 +10,19 @@ const DashboardLayout = () => {
   return (
     <div className="min-h-screen flex bg-gray-100">
       {/* Sidebar */}
-      <div
-        className={`fixed top-0 left-0 h-full w-64 bg-gray-900 text-white z-30 transform transition-transform duration-300 ease-in-out 
-          ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} 
-          md:translate-x-0 md:static md:block`}
-      >
-        <Sidebar />
-      </div>
+      <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
 
-      {/* Overlay for mobile when sidebar is open */}
+      {/* Overlay for mobile */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-20 md:hidden"
+          className="fixed inset-0  bg-opacity-50 z-20 md:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        {/* Topbar with toggle button on mobile */}
+        {/* Topbar on mobile */}
         <div className="p-4 bg-white shadow-md flex items-center md:hidden">
           <button onClick={() => setSidebarOpen(true)}>
             <Menu className="h-6 w-6 text-gray-800" />
@@ -52,7 +31,7 @@ const DashboardLayout = () => {
         </div>
 
         {/* Page content */}
-        <main className="flex-1 p-4">
+        <main className="flex-1 p-2">
           <Outlet />
         </main>
       </div>

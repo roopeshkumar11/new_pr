@@ -64,7 +64,7 @@ function Cart() {
         if (!user?.userId) return;
 
         const response = await axios.get(
-          `http://localhost:8080/api/cartitem/usercart/${user.userId}`
+          `https://new-pr.onrender.com/api/cartitem/usercart/${user.userId}`
         );
 
         if (response?.data?.singleitem) {

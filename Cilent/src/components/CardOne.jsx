@@ -12,7 +12,7 @@ function CardOne({productId,image ,title,price, description}) {
 
   const addtocart = async (userId, product, quantity) => {
   try {
-    const response = await axios.post("http://localhost:8080/api/cart/addtocart", {
+    const response = await axios.post("https://new-pr.onrender.com/api/cart/addtocart", {
       userId,
       product,
       quantity,

@@ -118,7 +118,7 @@ function Rajsathani() {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/product/getallproduct");
+        const response = await axios.get("https://new-pr.onrender.com/api/product/getallproduct");
         setProduct(response.data.product);
         console.log(response.data.product)
 

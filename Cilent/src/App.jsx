@@ -17,6 +17,7 @@ import Cart from './pages/Cart'
 
 
 
+
 function App() {
 
 
@@ -50,6 +51,7 @@ function App() {
                 <Route path='/login' element={<Login/>}/>
                 <Route path="/customerdetails" element={<CustomerDetails/>}/>
                  </Route>
+                 
      </Routes>
      </BrowserRouter>
 

@@ -19,7 +19,7 @@ function Sign() {
 
   try {
     const response = await axios.post(
-      'http://localhost:8080/api/user/userregister',
+      'https://new-pr.onrender.com/api/user/userregister',
       formData,
       {
         headers: {

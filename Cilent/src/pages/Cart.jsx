@@ -83,7 +83,7 @@ function Cart() {
 
   const handlerreomve=async(id)=>{
     try {
-      const removeitem=await axios.delete(`http://localhost:8080/api/deletecart/removeitem/${id}`)
+      const removeitem=await axios.delete(`https://new-pr.onrender.com/api/deletecart/removeitem/${id}`)
       if(removeitem.data.message){
         alert("Remove item from cart")
         navigate("/hero")

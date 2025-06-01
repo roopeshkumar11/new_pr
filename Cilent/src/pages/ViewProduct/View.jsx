@@ -11,7 +11,7 @@ function View() {
   useEffect(() => {
     const getSingleProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/product/getsingleproduct/${id}`);
+        const response = await axios.get(`https://new-pr.onrender.com/api/product/getsingleproduct/${id}`);
         if (response && response.data.singleproduct) {
           setSingleProduct(response.data.singleproduct);
         }

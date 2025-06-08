@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 function CustomerDetails({ onSubmit }) {
@@ -16,11 +17,8 @@ function CustomerDetails({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (onSubmit) {
-      onSubmit(formData); // pass data to parent if needed
-    }
-    console.log("Customer Details Submitted:", formData);
-    // Optionally: send formData to your backend
+  alert("hello")
+   
   };
 
   return (

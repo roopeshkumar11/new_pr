@@ -4,7 +4,7 @@ import { User } from "../../Models/User.model.js";
 export const deleteuser = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log("Deleting user with ID:", id);
+   
 
     const response = await User.findByIdAndDelete(id);
 

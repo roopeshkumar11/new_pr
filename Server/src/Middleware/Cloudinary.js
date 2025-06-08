@@ -21,7 +21,7 @@ cloudinary.config({
   api_key: process.env.YOUR_API_KEY,
   api_secret:process.env.YOUR_API_SECRET,
 });
-console.log("process.env.YOUR_CLOUD_NAME",process.env.YOUR_CLOUD_NAME)
+
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,

@@ -200,7 +200,7 @@ function Navbar() {
             <input
               type="text"
               placeholder="Search"
-              className="w-full px-3 py-1 rounded-full text-black"
+              className="w-full px-3 py-1 bg-white rounded-full text-black"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

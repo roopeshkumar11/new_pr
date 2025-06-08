@@ -36,7 +36,7 @@ export const getusercart = async (req, res) => {
 
     const cartItems = await Cart.find({ userId: id }).populate("product");
 
-    console.log(cartItems.product)
+  
 
     res.status(200).json({
       message: "Cart items fetched successfully",

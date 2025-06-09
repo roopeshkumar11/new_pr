@@ -2,7 +2,7 @@ import React from 'react'
 
 function DetailTurbon() {
   return (
-    <div>DetailTurbon</div>
+    <div><h1>DetailTurbon</h1></div>
   )
 }
 

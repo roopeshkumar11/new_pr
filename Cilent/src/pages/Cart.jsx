@@ -1,53 +1,5 @@
 
 
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import { useAuth } from '../ContextApi/Authcontext';
-
-// function Cart() {
-//   const [items, setItems] = useState([]);
-//   const { user } = useAuth();
-
-//   useEffect(() => {
-//     const getCartItems = async () => {
-//       try {
-//         if (!user?.userId) return;
-
-//         const response = await axios.get(
-//           `http://localhost:8080/api/cartitem/usercart/${user.userId}`
-//         );
-
-//         if (response?.data?.singleitem) {
-//           setItems(response.data.singleitem);
-//           console.log(response.data.singleitem)
-//         }
-//       } catch (error) {
-//         console.error('Error fetching cart items:', error);
-//       }
-//     };
-
-//     getCartItems();
-//   }, [user]);
-
-//   return (
-//     <div className="p-4">
-//       <h2 className="text-xl font-bold mb-4">Your Cart</h2>
-//       {items.length > 0 ? (
-//         items.map((item, index) => (
-//           <div key={index} className="border-b py-2">
-//             <p><strong>Product:</strong> {item.product?.name}</p>
-//             <p><strong>Quantity:</strong> {item.quantity}</p>
-//           </div>
-//         ))
-//       ) : (
-//         <p>No items in cart.</p>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default Cart;
-
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';

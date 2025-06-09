@@ -18,6 +18,7 @@ function CustomerDetails({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   alert("hello")
+  
    
   };
 

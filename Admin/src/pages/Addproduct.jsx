@@ -9,7 +9,7 @@ function Addproduct() {
     description: ''
   });
 
-  const [image, setImage] = useState(null); // 👈 New state for image file
+  const [image, setImage] = useState(null);
 
   const handleChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
